@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const Listing = require("../Major project/models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override")
-
 const MONGO_URL = ('mongodb://127.0.0.1:27017/Wanderlust');
+const ejsMate = require('ejs-mate');
 
 main().then(() => {
     console.log("Database is connected");
@@ -21,6 +21,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.engine("ejs", ejsMate);
+app.use(express.static(path.join(__dirname,"/public")));
 
 
 app.get("/", (req, res) => {
