@@ -3,14 +3,15 @@
     <body>
         <h3>All Listings</h3>
         <ul>
-            <form action="/listings/new" method="post">
+            <!-- <form action="/listings/new" method="get">
                 <button type="submit">Create new listings</button>
-            </form>
+            </form> -->
             <% for(let listing of allListings){ %>
                 <li><a href="/listings/<%= listing._id %>">
                         <%= listing.title%>
                     </a>
                 </li>
+
                 <% } %>
 
         </ul>
