@@ -93,4 +93,4 @@ app.delete("/listings/:id", async (req, res) => {
 
 app.listen(8080, () => {
     console.log("listening to the port 8080");
-})
+});
